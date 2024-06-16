@@ -5,11 +5,9 @@ spring:
   application:
     name: mic-pet
   jpa:
-    database: POSTGRESQL
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:postgresql://localhost:6543/mic-pet
+    url: jdbc:postgresql://localhost:5432/mic-pet
     username: postgres
     password: postgres
-    driverClassName: org.postgresql.Driver
