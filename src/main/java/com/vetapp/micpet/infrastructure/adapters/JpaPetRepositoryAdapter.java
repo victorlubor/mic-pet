@@ -11,13 +11,13 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 public class JpaPetRepositoryAdapter implements PetRepository {
 
-    private final JpaPetRepository jpaPetRepository;
+  private final JpaPetRepository jpaPetRepository;
 
-    @Override
-    public Pet save(Pet pet) {
-        PetEntity entity = PetEntity.fromDomain(pet);
-        entity = jpaPetRepository.save(entity);
+  @Override
+  public Pet save(Pet pet) {
+    PetEntity entity = PetEntity.fromDomain(pet);
+    entity = jpaPetRepository.save(entity);
 
-        return entity.toDomainModel();
-    }
+    return entity.toDomainModel();
+  }
 }

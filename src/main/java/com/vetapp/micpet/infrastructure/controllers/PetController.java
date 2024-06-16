@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class PetController {
 
-    private final PetService petService;
+  private final PetService petService;
 
-    @PostMapping
-    public ResponseEntity<Pet> createPet(@RequestBody Pet pet) {
-        return new ResponseEntity<>(petService.createPet(pet), HttpStatus.CREATED);
-    }
+  @PostMapping
+  public ResponseEntity<Pet> createPet(@RequestBody Pet pet) {
+    return new ResponseEntity<>(petService.createPet(pet), HttpStatus.CREATED);
+  }
 }

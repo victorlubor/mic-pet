@@ -4,6 +4,6 @@ import com.vetapp.micpet.domain.models.Pet;
 
 public interface PetRepository {
 
-    Pet save(Pet pet);
+  Pet save(Pet pet);
 
 }

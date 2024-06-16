@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class PetServiceImpl implements PetService {
 
-    private final PetRepository petRepository;
+  private final PetRepository petRepository;
 
-    @Override
-    public Pet createPet(Pet pet) {
-        return petRepository.save(pet);
-    }
+  @Override
+  public Pet createPet(Pet pet) {
+    return petRepository.save(pet);
+  }
 }
