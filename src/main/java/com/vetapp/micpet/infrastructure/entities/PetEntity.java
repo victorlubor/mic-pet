@@ -1,6 +1,5 @@
 package com.vetapp.micpet.infrastructure.entities;
 
-import com.vetapp.micpet.domain.models.Pet;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,11 +28,4 @@ public class PetEntity {
   @Column(name = "OWNER_ID", nullable = false)
   private Long ownerId;
 
-  public static PetEntity fromDomain(Pet pet) {
-    return new PetEntity(pet.getId(), pet.getName(), pet.getOwnerId());
-  }
-
-  public Pet toDomainModel() {
-    return new Pet(id, name, ownerId);
-  }
 }

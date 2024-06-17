@@ -1,7 +1,8 @@
 package com.vetapp.micpet.infrastructure.controllers;
 
+import com.vetapp.micpet.application.services.PetService;
 import com.vetapp.micpet.domain.models.Pet;
-import com.vetapp.micpet.domain.ports.input.PetService;
+import com.vetapp.micpet.infrastructure.controllers.dtos.CreatePetDtoIn;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ public class PetController {
   private final PetService petService;
 
   @PostMapping
-  public ResponseEntity<Pet> createPet(@RequestBody Pet pet) {
-    return new ResponseEntity<>(petService.createPet(pet), HttpStatus.CREATED);
+  public ResponseEntity<Pet> createPet(@RequestBody CreatePetDtoIn dtoIn) {
+    return new ResponseEntity<>(petService.createPet(dtoIn), HttpStatus.CREATED);
   }
 }
