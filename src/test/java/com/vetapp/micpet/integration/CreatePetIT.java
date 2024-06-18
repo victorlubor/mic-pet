@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.vetapp.micpet.domain.models.Pet;
 import com.vetapp.micpet.infrastructure.repositories.JpaPetRepository;
-import com.vetapp.micpet.integration.base.BaseIntegrationTest;
+import com.vetapp.micpet.integration.config.BaseIntegrationTest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +36,7 @@ class CreatePetIT extends BaseIntegrationTest {
 
     Pet pet = given()
         .contentType("application/json")
+        .port(serverPort)
         .body(jsonBody)
         .when()
         .post(CREATE_PET_ENDPOINT)
